@@ -1,0 +1,29 @@
+<div class="container mt-100 mb-100 follow-page">
+<h2><%= @title %></h2>
+<ul class="list-group mt-30">
+<% @users.each do |user| %>
+  
+  <li class="list-group-item">
+  <div class="row">
+  <div class="col-sm-9">
+  <p class="text-muted follow-image-text">Users last posts:</p>
+  <h4 class="follow-name">
+  <%= link_to user.name, user %>
+  </h4>
+  <p class="text-muted mb-0 mt-15"><%= user.posts.count %> posts</p>
+  <p class="text-muted mb-0">User created account <%= time_ago_in_words(user.created_at) %> ago</p>
+  </div>
+
+<div class="col-sm-3">
+  <% user.posts.limit(3).each do |post| %>
+  <% if post.image.present?%>
+  <%= link_to image_tag(post.image_url), post, class: "follow-image"%>
+  <% end %>
+  <% end %>
+</div>
+
+  </div>
+  </li>
+<% end %>
+</ul>
+</div>
