@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :delete]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = current_user.posts;
   end
 
   # GET /posts/1
@@ -72,4 +74,11 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:image, :description)
     end
+
+  def logged_in_user
+    if @post.user_id != current_user.id
+      flash[:notice] = "You can't edit or delete posts that not belong to you!"
+      redirect_to post_path
+    end
+  end
 end

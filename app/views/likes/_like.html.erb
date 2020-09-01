@@ -1,0 +1,15 @@
+<% check_like = @post.likes.find {|like| like.user_id == current_user.id} %>
+<% if check_like %>
+  <%= link_to post_like_path(@post, check_like), method: :delete do%>
+      <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-heart-fill hvr-pulse-grow" fill="rgba(255 54 80)" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+      </svg>
+    <% end %>
+<% else %>
+  <%= link_to post_likes_path(@post), method: :post do%>
+      <svg width="1.8em" height="1.8em" viewBox="0 0 16 16" class="bi bi-heart-fill hvr-pulse-grow" fill="rgba(0, 0, 0, 0.4)" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+      </svg>
+    <% end %>
+<% end %>
+

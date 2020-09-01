@@ -1,7 +1,14 @@
+<div class="row">
+    <div class="container mt-100 mb-100">
+      <div class="h2">New post 🖼</div>
+
+    <div class="col">
+
+
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div id="error_explanation" class="alert" style="width: 60%">
+      <h2 ><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
         <% post.errors.full_messages.each do |message| %>
@@ -10,22 +17,19 @@
       </ul>
     </div>
   <% end %>
+        <hr>
+        <%= form.hidden_field :image, value: post.cached_image_data %>
+        <%= form.file_field :image , class:"form-control-file"%>
+        <div class="form"><small class="text-muted form"><em>Formats: "jpg, jpeg, png, webp, tiff, tif"</em></small></div>
 
-  <div class="field">
-  <% if post.image.present?%>
-  <%= image_tag post.image_url%>
-  <% end %>
-    <%= form.label :image %>
-    <%= form.hidden_field :image, value: post.cached_image_data %>
-    <%= form.file_field :image %>
-  </div>
+        <%= form.text_area :description , class:"form-control", placeholder:"Your description..", style:" resize: none; width: 50%"%>
+        <div class="form"><small class="text-muted"><em>Only 140 characters</em></small></div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+        <%= form.submit "Upload", class: 'btn-c form' %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
+      <%= link_to 'Back', current_user, class: "btn-c btn-form" %>
+    </div>
+  </div>
+</div>

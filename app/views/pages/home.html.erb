@@ -1,4 +1,4 @@
-<div class="container mt-100">
+<div class="container mt-100 mb-100">
 <div class="jumbotron">
 <% if current_user%>
   <h1 class="display-4">Hello, <%= @user %>!</h1>
@@ -6,7 +6,7 @@
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <%= link_to "Go to your profile 🐝", current_user, class:"btn btn-primary btn-lg" %>
+    <%= link_to "Go to your profile 🐝", current_user, class:"btn-c" %>
   </p>
   <% else %>
   <h1 class="display-4">Hello, my friend!</h1>
@@ -14,14 +14,8 @@
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
-    <%= link_to 'Sign up now 📝', new_user_registration_path, class:"btn btn-primary btn-lg"%>
+    <%= link_to 'Sign up now 📝', new_user_registration_path, class:"btn-c"%>
   </p>
   <% end %>
 </div>
-
-
-
-
-
-
-
+</div>

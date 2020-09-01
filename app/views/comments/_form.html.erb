@@ -1,4 +1,6 @@
+<div style="margin-bottom: 60px;">
 <%= form_for([@post, @post.comments.build]) do |f| %>
 <%= f.text_area :content, class:"form-control", placeholder:"Your comment..", style:" resize: none;"%>
-<%= f.submit "Leave a comment", class: 'btn-sm comment-button' %> 
+<%= f.submit "Leave a comment", class: 'btn-c-grey' %>
 <% end %>
+</div>
