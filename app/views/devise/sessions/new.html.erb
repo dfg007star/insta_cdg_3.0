@@ -7,8 +7,6 @@
       <div class="form" style="display: flex; align-items: flex-end;">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email", style:" resize: none; width: 25%"%></div>
 
-
-
       <div class="form" style="display: flex; align-items: flex-end;">
         <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password", style:" resize: none; width: 25%" %></div>
 
@@ -17,7 +15,7 @@
        <%= f.label :remember_me %>
        <% end %></div>
 
-    <%= f.submit "Sign in",class: 'btn-c' %>
+    <%= f.submit "Sign in",class: 'btn-c form' %>
 
 <% end %>
 

@@ -6,15 +6,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
       <hr>
-
       <div class="form" style="display: flex; align-items: flex-end;">
       <%= f.text_field :name, autofocus: true , class:"form-control", placeholder:"Name", style:" resize: none; width: 25%"%>
       <small class="text-muted form" style="margin-left: 5px"><em>Only 30 characters</em></small></div>
 
-
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control form", placeholder:"Email", style:" resize: none; width: 25%" %>
-
-
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control form", placeholder:"Email", style:" resize: none; width: 25%" %>
 
       <div class="form" style="display: flex; align-items: flex-end;">
     <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password", style:" resize: none; width: 25%" %>
@@ -22,16 +18,13 @@
         (<%= @minimum_password_length %> characters minimum)
       <% end %></em></small></div>
 
-
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control form", placeholder:"Password confirmation", style:" resize: none; width: 25%" %>
 
-
-
-    <%= f.submit "Sign up" ,class: 'btn-c'%>
+    <%= f.submit "Sign up" ,class: 'btn-c form'%>
 
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links"%>
 
   </div>
 </div>

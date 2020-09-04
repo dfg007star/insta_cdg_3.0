@@ -6,7 +6,8 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -58,3 +59,7 @@ gem "shrine", "~> 3.0"
 gem 'bootstrap-sass', '3.4.1'
 gem 'bootstrap', '~> 4.5', '>= 4.5.2'
 gem 'rubocop-rails', require: false
+gem 'gravatarify', '~> 3.0.0'
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap'
+gem 'nokogiri'

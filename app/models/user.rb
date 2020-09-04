@@ -34,4 +34,7 @@ class User < ApplicationRecord
   def following?(other)
     following.include?(other)
   end
+
+  # Pagination
+  self.per_page = 5
 end
