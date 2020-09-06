@@ -1,10 +1,10 @@
 <%# User info %>
 <div class='container mt-100'>
-  <div class="row ">
+  <div class="row">
     <div class="col-sm-2">
       <%= gravatar_tag @user.email, :size => 150, :rating => :x, :html => { :class => "gravatar" } %>
-    <%= render 'follow_form' if user_signed_in? %>
-    <%= render "layouts/alerts"%>
+      <%= render 'follow_form' if user_signed_in? %>
+      <%= render "layouts/alerts"%>
     </div>
     <div class="col-sm-4">
       <h2 class="user-name">

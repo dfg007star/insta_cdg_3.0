@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     if user_signed_in?
       @users = User.paginate(page: params[:page]).order("name ASC")

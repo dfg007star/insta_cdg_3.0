@@ -11,7 +11,7 @@
 <div style="margin-top: 20px;">
 <div class="mb-15 h4" style="align-items: center; display: flex; justify-content: space-between;">
   <div style="align-items: center; display: flex;">
-    <%= gravatar_tag @post.user.email, :size => 40, :rating => :x, :html => { :class => "gravatar" } %>
+    <%= gravatar_tag comment.user.email, :size => 40, :rating => :x, :html => { :class => "gravatar-small" } %>
     <%= link_to comment.user.name, @post.user%></div>
   <small style="color: rgba(0, 0, 0, 0.5); float: right;"><%= time_ago_in_words(comment.created_at) %> ago</small>
     </div>

@@ -197,7 +197,7 @@ footer {
   }
   .user-name {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .stats {
     overflow: auto;
@@ -377,10 +377,14 @@ footer {
 .form {
   margin-bottom: 10px;
 }
-.gravatar {
+.gravatar-small {
   border-radius: 50%;
   margin-right: 5px;
 }
+.gravatar {
+  border-radius: 50%;
+}
+
 
 
 //Animations

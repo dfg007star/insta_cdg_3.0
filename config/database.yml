@@ -30,10 +30,10 @@
 development:
   adapter: postgresql
   database: postgres
-  # password: 1111
+  password: 1111
   pool: 5
   timeout: 5000
-  # username: postgres
+  username: postgres
 production:
   adapter: postgresql
   database: <%= ENV['DATABASE_URL'] %>

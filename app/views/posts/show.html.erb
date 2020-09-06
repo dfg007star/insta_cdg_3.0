@@ -10,7 +10,7 @@
         <% end %>
       <%= render "layouts/alerts"%>
     <div class="h4" style="align-items: center; display: flex; margin-top: 20px; margin-bottom: 0;">
-      <%= gravatar_tag @post.user.email, :size => 40, :rating => :x, :html => { :class => "gravatar" } %>
+      <%= gravatar_tag @post.user.email, :size => 40, :rating => :x, :html => { :class => "gravatar-small" } %>
     <%= link_to @post.user.name, @post.user%>
     </div>
       <% if @post.image.present?%>

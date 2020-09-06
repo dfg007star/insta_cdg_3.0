@@ -1,6 +1,5 @@
 <%# User posts %>
   <% if @user.posts.any? %>
-
     <div class="row mb-100">
       <div class='container'>
         <% @user.posts.each do |post| %>
@@ -20,7 +19,6 @@
               </div>
               </div>
             <% end %>
-
             <% end %>
             <p class="mt-5 text-muted" style="text-align: right; display: inline; float: right; margin-bottom: 6px;"><small>Posted <%= time_ago_in_words(post.created_at) %> ago</small></p>
               </div>
