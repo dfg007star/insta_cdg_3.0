@@ -45,7 +45,6 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
@@ -63,3 +62,15 @@ gem 'gravatarify', '~> 3.0.0'
 gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap'
 gem 'nokogiri'
+
+group :development, :test do
+  gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy', '~> 2.5'
+  gem 'pry'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails', '~> 6.1'
+  gem 'faker', '~> 2.13'
+end

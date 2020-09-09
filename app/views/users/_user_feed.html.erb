@@ -25,4 +25,19 @@
             <% end %>
         </div>
     </div>
+    <% elsif @user != current_user %> 
+      <div class="jumbotron jumbotron-fluid" style="margin-top: 40px;">
+        <div class="container">
+          <h1 class="display-4">Still no posts 😢</h1>
+        </div>
+      </div>
+      <% else%>
+       <div class="jumbotron jumbotron-fluid" style="margin-top: 40px;">
+        <div class="container">
+          <h1 class="display-4">Still no posts 😢</h1>
+          <br>
+          <p class="lead">Click here to make your first post.</p>
+          <%= link_to "New post", new_post_path, class: "btn-c" %>
+        </div>
+      </div>
   <% end %>

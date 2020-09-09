@@ -1,5 +1,5 @@
 <%# Feed_users_you_follow %>
-<% if @posts %>
+<% if @posts.count > 0 %>
     <div class="row mb-100 mt-100">
       <div class='container '>
       <% @posts.each do |post| %>
@@ -27,7 +27,7 @@
   <div class='container mb-100 mt-100'>
   <div class="jumbotron">
     <h1 class="display-4"><%= current_user.name %> 😢</h1>
-    <p class="lead">Follow users to see their posts here<br> or users that you following steel not upload photos.</p>
+    <p class="lead">Follow users to see their posts here<br> or users that you following still not upload photos.</p>
     <p class="lead">
       <%= link_to "Users 👥", users_path, class:"btn-c" %>
     </p>
