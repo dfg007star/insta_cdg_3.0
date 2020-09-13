@@ -65,7 +65,9 @@ gem 'nokogiri'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'rails-controller-testing'
+  gem 'rails-controller-testing'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy', '~> 2.5'

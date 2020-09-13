@@ -1,30 +1,22 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe User, :type => :model do
   context "validations tests" do
-    let (:user) { build(:user) }
-    it "ensures name presence" do
-      # user = User.new(email: "lol@example.com", password: "password", password_confirmation: "password").save
-      user.name = nil
-      expect(user.save).to eq(false)
-    end
+    subject { build(:user) }
 
-    it "ensures email presence" do
-      # user = User.new(name: "Dima Osin", password: "password", password_confirmation: "password").save
-      user.email = nil
-      expect(user.save).to eq(false)
-    end
+    it { is_expected.to have_many(:posts) }
+    it { is_expected.to have_many(:active_relationships).with_foreign_key(:follower_id).class_name("Relationship")}
+    it { is_expected.to have_many(:following).through(:active_relationships).source(:followed)}
 
-    it "ensures password confirmation" do
-      # user = User.new(name: "Dima Osin", email: "lol@example.com", password: "password", password_confirmation: "passwor").save
-      user.password_confirmation = "passwor"
-      expect(user.save).to eq(false)
-    end
+    it { is_expected.to have_many(:passive_relationships).with_foreign_key(:followed_id).class_name("Relationship")}
+    it { is_expected.to have_many(:followers).through(:passive_relationships).source(:follower)}
 
-    it "save successfully" do
-      # user = User.new(name: "Dima Osin", email: "lol@example.com", password: "password", password_confirmation: "password").save
-      expect(user.save).to eq(true)
-    end
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_length_of(:name).is_at_most(30) }
 
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_uniqueness_of(:email).ignoring_case_sensitivity }
+
+    it { is_expected.to validate_presence_of(:password) }
   end
 end

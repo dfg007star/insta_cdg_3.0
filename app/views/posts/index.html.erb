@@ -1,5 +1,4 @@
 <%# Feed_user %>
-<% if @posts.any? %>
   <div class='container'>
     <div class="row mb-100 mt-100">
       <% @posts.shuffle.each do |post| %>
@@ -17,12 +16,10 @@
                 </div>
               </div>
             <% end %>
-
           <% end %>
           <p class="mt-5 text-muted" style="text-align: right; display: inline; float: right; margin-bottom: 6px;"><small>Posted <%= time_ago_in_words(post.created_at) %> ago</small></p>
         </div>
       <% end %>
     </div>
   </div>
-<% end %>
 
