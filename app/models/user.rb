@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :email, presence: true, uniqueness: true
-  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -20,9 +20,8 @@ class User < ApplicationRecord
                                    foreign_key: 'followed_id',
                                    dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
-  
 
-# helper_methods
+  # helper_methods
 
   def follow(other)
     active_relationships.create(followed_id: other.id)

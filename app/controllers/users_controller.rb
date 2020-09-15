@@ -3,11 +3,10 @@ class UsersController < ApplicationController
 
   def index
     if user_signed_in?
-      @users = User.paginate(page: params[:page]).order("name ASC")
-    else 
+      @users = User.paginate(page: params[:page]).order('name ASC')
+    else
       redirect_to new_user_session_path
     end
-    
   end
 
   def show
@@ -15,16 +14,16 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = 'Following'
     @user = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page]).order("name ASC")
+    @users = @user.following.paginate(page: params[:page]).order('name ASC')
     render 'users/follow_show'
   end
 
   def followers
-    @title = "Followers"
+    @title = 'Followers'
     @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page]).order("name ASC")
+    @users = @user.followers.paginate(page: params[:page]).order('name ASC')
     render 'follow_show'
   end
 end

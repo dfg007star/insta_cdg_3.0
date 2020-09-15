@@ -1,10 +1,7 @@
 class PagesController < ApplicationController
   def home
-    if current_user
-    @user = current_user.name.sub(/^./, &:upcase)
-    end
+    @user = current_user.name.sub(/^./, &:upcase) if current_user
   end
-  def contact
-    
-  end
+
+  def contact; end
 end

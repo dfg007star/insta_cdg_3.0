@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   include ImageUploader::Attachment(:image)
-  belongs_to :user, required: true
+  belongs_to :user, optional: false
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   default_scope -> { order(created_at: :desc) }

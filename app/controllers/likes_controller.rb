@@ -12,9 +12,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if already_liked?
-      @like.destroy
-    end
+    @like.destroy if already_liked?
     redirect_to post_path(@post)
   end
 

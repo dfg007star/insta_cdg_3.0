@@ -1,15 +1,11 @@
 <div class="row">
     <div class="container mt-100 mb-100">
       <div class="h2">New post 🖼</div>
-
     <div class="col">
-
-
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation" class="alert" style="width: 60%">
       <h2 ><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
         <% post.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -26,9 +22,7 @@
         <div class="form"><small class="text-muted"><em>Only 140 characters</em></small></div>
 
         <%= form.submit "Upload", class: 'btn-c form' %>
-
 <% end %>
-
       <%= link_to 'Back', current_user, class: "btn-c btn-form" %>
     </div>
   </div>
