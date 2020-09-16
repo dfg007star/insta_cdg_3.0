@@ -78,9 +78,9 @@ class PostsController < ApplicationController
   end
 
   def logged_in_user
-    if @post.user_id != current_user.id
-      flash[:notice] = "You can't edit or delete posts that not belong to you!"
-      redirect_to post_path
-    end
+    return unless @post.user_id != current_user.id
+
+    flash[:notice] = "You can't edit or delete posts that not belong to you!"
+    redirect_to post_path
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :find_post
   before_action :find_comment, only: %i[destroy edit update]
@@ -6,12 +8,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(params[:comment].permit(:content))
     @comment.user_id = current_user.id
     @comment.save
-
-    if @comment.save
-      redirect_to post_path(@post)
-    else
-      redirect_to post_path(@post)
-    end
+    redirect_to post_path(@post)
   end
 
   def destroy

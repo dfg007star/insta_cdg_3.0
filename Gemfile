@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -70,7 +72,6 @@ group :development, :test do
   gem 'faker', '~> 2.13'
   gem 'launchy', '~> 2.5'
   gem 'pry'
-  gem 'rails-controller-testing'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'shoulda-matchers'

@@ -1,7 +1,11 @@
 <%# Feed_users_you_follow %>
 <% if @posts && @posts.count > 0 %>
     <div class="row mb-100 mt-100">
-      <div class='container '>
+    <div class="container">
+    <div class="h2">Feed</div>
+      <hr>
+    </div>
+      <div class='container'>
       <% @posts.each do |post| %>
         <div class="col-lg-3 card card-user-feed">
           <% if post.image.present?%>
