@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   authenticate :user do
     resources :posts, only: %i[create destroy index new edit]

@@ -64,7 +64,6 @@ gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 6.1'

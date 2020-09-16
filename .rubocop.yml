@@ -8,3 +8,14 @@ AllCops:
 Bundler/OrderedGems:
   Exclude:
     - 'Gemfile'
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+Metrics/BlockLength:
+  Exclude:
+    - db/schema.rb
+  Max: 100
+Metrics/LineLength:
+  Max: 160
+Documentation:
+  Enabled: false

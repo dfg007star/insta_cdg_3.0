@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImageUploader < Shrine
   # plugins and uploading logic
   plugin :default_url

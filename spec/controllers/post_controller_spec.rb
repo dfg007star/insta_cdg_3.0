@@ -71,7 +71,7 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it { is_expected.to render_template :new }
-      it { expect { subject }.not_to change { Post.count } }
+      it { expect { subject }.not_to change(Post, :count) }
     end
   end
 
