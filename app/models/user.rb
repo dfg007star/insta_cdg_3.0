@@ -38,7 +38,7 @@ class User < ApplicationRecord
   end
 
   def self.search_by(search_term)
-    where('name ILIKE :search_term OR email ILIKE :search_term', search_term: "%#{search_term}".downcase)
+    where('LOWER(name) LIKE :search_term OR LOWER(email) LIKE :search_term', search_term: "%#{search_term}%".downcase)
   end
   # Pagination
   self.per_page = 5

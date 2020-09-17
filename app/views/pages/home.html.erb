@@ -2,20 +2,21 @@
 <div class="jumbotron">
 <% if current_user%>
   <h1 class="display-4">Hello, <%= @user %>!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <p class="lead">
+This application will allow you to find friends and share your photos with them.</p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
     <%= link_to "Go to your profile 🐝", current_user, class:"btn-c" %>
   </p>
   <% else %>
   <h1 class="display-4">Hello, my friend!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <p class="lead">
+This application will allow you to find friends and share your photos with them.</p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
     <%= link_to 'Sign up now 📝', new_user_registration_path, class:"btn-c"%>
   </p>
+  <p>Join us quickly.</p>
   <% end %>
 </div>
 </div>

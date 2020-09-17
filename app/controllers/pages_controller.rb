@@ -2,8 +2,6 @@
 
 class PagesController < ApplicationController
   def home
-    @user = current_user.name.sub(/^./, &:upcase) if current_user
+    @user = current_user.name.split.map(&:capitalize).join(' ') if current_user
   end
-
-  def contact; end
 end
