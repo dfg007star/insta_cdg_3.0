@@ -81,13 +81,16 @@ footer {
   overflow-y: visible;
 }
 .navbar {
-  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 }
 .b-c {
   color: black;
 }
 .h-link {
-  color: black;
+  color: rgba(0, 0, 0, 1);
+  &:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
 }
 .center {
   width: 300px;
@@ -138,15 +141,10 @@ footer {
   visibility: hidden;
 }
 .card-image {
-  //margin-bottom: 10px;
   object-fit: cover;
   height: 318px;
   width: 318px;
   border-radius: 4px;
-  &:hover {
-    //-webkit-filter: brightness(0.9);
-    //filter: brightness(0.9);
-  }
 }
 .mt-5 {
   margin-top: 5px;
@@ -293,7 +291,6 @@ footer {
     margin-left: 20px;
   }
 }
-
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {
   to {
@@ -385,7 +382,6 @@ footer {
 .gravatar {
   border-radius: 50%;
 }
-
 //Animations
 .Character {
   width: calc(32px * var(--pixel-size));
@@ -419,7 +415,6 @@ footer {
 .face-left {
   top: calc(-96px * var(--pixel-size));
 }
-
 @keyframes moveSpritesheet {
   from {
     transform: translate3d(0px, 0, 0);
@@ -431,9 +426,46 @@ footer {
 :root {
   --pixel-size: 6;
 }
-
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
+}
+.search-form {
+  background-image: url(asset_path('search.svg'));
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: 0.9em 0.9em;
+  width: 105px;
+  outline: none;
+  padding-left: 25px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-top: 12px;
+  margin-right: 20px;
+  border: none;
+  border-right: solid 1px rgba(0, 0, 0, 0.1);
+  transition: 0.2s linear;
+  &:hover,
+  &:focus,
+  &:active {
+    width: 150px;
+    cursor: pointer;
+    border-right: solid 1px rgba(119, 202, 227, 1);
+    background: rgba(119, 202, 227, 0.2);
+    border-radius: 4px 0 0 4px;
+    background-image: url(asset_path('search.svg'));
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    background-size: 1em 1em;
+  }
+  &::placeholder {
+    color: transparent;
+    transition: 0.1s linear;
+  }
+  &:hover::placeholder,
+  &:focus::placeholder,
+  &:active::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
 }

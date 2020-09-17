@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     else
       redirect_to new_user_session_path
     end
+    return unless params[:search]
+
+    @search_term = params[:search]
+    @users = @users.search_by(@search_term)
   end
 
   def show
