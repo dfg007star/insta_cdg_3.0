@@ -17,11 +17,9 @@
      </div>
       <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <% if user_signed_in? %>
-          <li>
-            <%= form_for '', url: users_path, role: 'search', method: :get do %>
-            <%= text_field_tag :search, @search_term, placeholder: "Search..", class: "search-form"%>
-            <% end %>
-          </li>
+        <%if not request.path == new_post_path %>
+          <li><%= render "users/form_search" %></li>
+          <% end %>
           <li><%= link_to "Feed", feed_posts_path, class: "h-link" %></li>
           <li><%= link_to "Users", users_path, class: "h-link" %></li>
           <li class="dropdown">

@@ -431,23 +431,23 @@ footer {
   position: sticky;
   top: 100px;
 }
-.search-form {
+.search {
   background-image: url(asset_path('search.svg'));
   background-repeat: no-repeat;
   background-position: 85% 50%;
   background-size: 0.9em 0.9em;
-  width: 105px;
+  width: 10px;
   height: 50px;
   outline: none;
   padding-left: 35px;
   padding-top: 4px;
   padding-bottom: 4px;
   border: none;
-  transition: 0.2s linear;
+  transition: 0.1s linear;
   &:hover,
   &:focus,
   &:active {
-    width: 150px;
+    width: 160px;
     cursor: pointer;
     border-right: solid 1px rgba(119, 202, 227, 1);
     background: rgba(119, 202, 227, 0.2);
