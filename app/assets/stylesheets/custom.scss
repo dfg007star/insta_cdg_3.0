@@ -434,17 +434,15 @@ footer {
 .search-form {
   background-image: url(asset_path('search.svg'));
   background-repeat: no-repeat;
-  background-position: 95% 50%;
+  background-position: 85% 50%;
   background-size: 0.9em 0.9em;
   width: 105px;
+  height: 50px;
   outline: none;
-  padding-left: 25px;
+  padding-left: 35px;
   padding-top: 4px;
   padding-bottom: 4px;
-  margin-top: 12px;
-  margin-right: 20px;
   border: none;
-  border-right: solid 1px rgba(0, 0, 0, 0.1);
   transition: 0.2s linear;
   &:hover,
   &:focus,
@@ -453,10 +451,9 @@ footer {
     cursor: pointer;
     border-right: solid 1px rgba(119, 202, 227, 1);
     background: rgba(119, 202, 227, 0.2);
-    border-radius: 4px 0 0 4px;
     background-image: url(asset_path('search.svg'));
     background-repeat: no-repeat;
-    background-position: 5% 50%;
+    background-position: 10% 50%;
     background-size: 1em 1em;
   }
   &::placeholder {
