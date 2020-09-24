@@ -1,11 +1,16 @@
-def create_user(email, name)
-  User.create!(
-    name: name,
-    email: email,
-    password: 'password'
-  )
-  end
+# frozen_string_literal: true
 
-1...20.times do |i|
-  create_user("person_#{i}@test#{i}.io", "person_#{i}")
+# User.destroy_all
+
+User.create!(name: Faker::Name.name,
+             email: Faker::Internet.email,
+             password: 'password',
+             password_confirmation: 'password')
+2.times do
+  User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 'password',
+    password_confirmation: 'password'
+  )
 end
