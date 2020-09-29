@@ -4,10 +4,15 @@
 require 'rails_helper'
 
 RSpec.describe 'Post page', :js, type: :feature do
-  let!(:user) { create :user }
-
   scenario 'user create post' do
-    login_as user
+    visit '/'
+    click_link 'Sign up'
+    expect(page).to have_current_path '/users/sign_up'
+    fill_in placeholder: 'Name', with: 'Dima'
+    fill_in placeholder: 'Email', with: 'post_test@mail.ru'
+    fill_in placeholder: 'Password', with: 'password'
+    fill_in placeholder: 'Password confirmation', with: 'password'
+    click_on(class: 'btn-c')
 
     visit new_post_path
 

@@ -8,7 +8,7 @@
 
 <% @comments.each do |comment| %>
 
-<div style="margin-top: 20px;">
+<div class="user-comment" style="margin-top: 20px;">
 <div class="mb-15 h4" style="align-items: center; display: flex; justify-content: space-between;">
   <div style="align-items: center; display: flex;">
     <%= gravatar_tag comment.user.email, :size => 40, :rating => :x, :html => { :class => "gravatar-small" } %>

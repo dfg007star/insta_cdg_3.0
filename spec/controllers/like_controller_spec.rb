@@ -4,6 +4,7 @@
 require 'rails_helper'
 
 RSpec.describe LikesController, type: :controller do
+  DatabaseCleaner.clean
   let(:user) { create :user }
   let(:post) { create :post }
   let(:like) { create :like }
