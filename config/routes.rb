@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   get 'users/index'
   get 'pages/home'
-  get '/contact', to: 'pages#contact'
+  get 'contact', to: 'pages#contact'
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :feed_posts, only: [:index]
   resources :users do
@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  resources :comments
   resources :posts do
     resources :likes
   end

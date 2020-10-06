@@ -4,11 +4,6 @@ class CommentsController < ApplicationController
   before_action :find_post
   before_action :find_comment, only: :destroy
 
-  def index
-    @comments = Comment.all
-    @comment = Car.new
-  end
-
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
